@@ -3,19 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build && touch out/.nojekyll",
-    "deploy": "npm run build && gh-pages -d out -t true",
-    "start": "next start",
-    "lint": "next lint",
-    "build:analyze": "ANALYZE=true next build",
-    "analyze": "ANALYZE=true next build",
-    "build:prod": "NODE_ENV=production next build",
-    "start:prod": "NODE_ENV=production next start",
-    "clean": "rm -rf .next out",
-    "lint:fix": "next lint --fix"
-  },
+"scripts": {
+  "dev": "next dev",
+  "build": "next build",
+  "start": "serve out -s -p 3000",
+  "lint": "next lint",
+  "clean": "rm -rf .next out",
+  "deploy": "npm run clean && next build && touch out/.nojekyll && gh-pages -d out"
+},
   "dependencies": {
     "@heroicons/react": "^2.2.0",
     "@tailwindcss/forms": "^0.5.10",
@@ -44,6 +39,7 @@
     "eslint-config-next": "15.1.6",
     "gh-pages": "^6.3.0",
     "postcss": "^8.5.1",
+    "serve": "^14.2.1",
     "tailwindcss": "^3.4.17",
     "typescript": "^5"
   }

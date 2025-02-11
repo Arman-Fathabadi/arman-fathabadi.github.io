@@ -1,31 +1,15 @@
-import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
-
-const nextConfig = { 
-  output: 'export',  // Add this line
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: 'export',
+  basePath: process.env.NODE_ENV === 'production' ? '/personal-portfolio' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/personal-portfolio/' : '',
   images: {
-    unoptimized: true,
-    remotePatterns: [{
-      protocol: 'https',
-      hostname: '**'
-    }]
+    unoptimized: true
   },
-  basePath: '/personal-portfolio', // Replace with your repo name
-  assetPrefix: '/personal-portfolio/', // Replace with your repo name
-  // If you want to analyze bundles
-  ...(process.env.ANALYZE === 'true' && {
-    webpack: (config, { dev, isServer }) => {
-      if (!dev && !isServer) {
-        config.plugins.push(
-          new BundleAnalyzerPlugin({
-            analyzerMode: 'server',
-            analyzerPort: 8888,
-            openAnalyzer: true,
-          })
-        );
-      }
-      return config;
-    },
-  })
+  experimental: {
+    optimizeCss: true,
+    optimizePackageImports: ['@heroicons/react', 'framer-motion', 'react-icons']
+  }
 };
 
 export default nextConfig;

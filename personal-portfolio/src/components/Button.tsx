@@ -1,5 +1,3 @@
-// src/components/Button.tsx
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
@@ -12,6 +10,8 @@ interface ButtonProps {
 }
 
 const Button = ({ children, onClick, href, type = 'button' }: ButtonProps) => {
+  const basePath = process.env.NODE_ENV === 'production' ? '/personal-portfolio' : '';
+
   const content = (
     <motion.button
       type={type}
@@ -26,7 +26,7 @@ const Button = ({ children, onClick, href, type = 'button' }: ButtonProps) => {
 
   if (href) {
     return (
-      <Link href={href}>
+      <Link href={`${basePath}${href}`}>
         {content}
       </Link>
     );

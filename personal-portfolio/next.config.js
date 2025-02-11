@@ -1,9 +1,13 @@
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
-const nextConfig = {
-  output: 'export',  // Enable static exports
+const nextConfig = { 
+  output: 'export',  // Add this line
   images: {
-    unoptimized: true, // Required for static export
+    unoptimized: true,
+    remotePatterns: [{
+      protocol: 'https',
+      hostname: '**'
+    }]
   },
   basePath: '/personal-portfolio', // Replace with your repo name
   assetPrefix: '/personal-portfolio/', // Replace with your repo name
@@ -21,7 +25,7 @@ const nextConfig = {
       }
       return config;
     },
-  }),
+  })
 };
 
 export default nextConfig;

@@ -1,11 +1,12 @@
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
-/** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
+  output: 'export',  // Enable static exports
   images: {
-    domains: ['your-domain.com'], // Add your image domains here
+    unoptimized: true, // Required for static export
   },
+  basePath: '/personal-portfolio', // Replace with your repo name
+  assetPrefix: '/personal-portfolio/', // Replace with your repo name
   // If you want to analyze bundles
   ...(process.env.ANALYZE === 'true' && {
     webpack: (config, { dev, isServer }) => {

@@ -6,14 +6,18 @@ import typography from '@tailwindcss/typography';
 export default {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
   darkMode: 'class',
-  future: {
-    hoverOnlyWhenSupported: true,
-  },
   theme: {
     extend: {
       colors: {
         primary: colors.blue,
         secondary: colors.gray,
+      },
+      boxShadow: {
+        'deep': '0 4px 20px -2px rgba(0, 0, 0, 0.2)',
+      },
+      backdropFilter: {
+        'none': 'none',
+        'blur': 'blur(20px)',
       },
     },
   },

@@ -1,17 +1,9 @@
-// src/components/Badge.tsx
-
 import React from 'react';
 
-interface BadgeProps {
-  children: React.ReactNode;
-}
-
-const Badge: React.FC<BadgeProps> = ({ children }) => {
+export default function Badge({ children }: { children: React.ReactNode }) {
   return (
-    <span className="inline-block bg-blue-100 text-blue-800 dark:bg-blue-800 dark:text-blue-100 text-sm px-3 py-1 rounded-full">
+    <span className="px-3 py-1 text-sm font-medium text-blue-600 bg-blue-100 rounded-full dark:text-blue-100 dark:bg-blue-900">
       {children}
     </span>
   );
-};
-
-export default Badge;
+}

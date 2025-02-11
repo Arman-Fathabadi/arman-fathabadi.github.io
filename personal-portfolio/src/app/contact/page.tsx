@@ -1,8 +1,20 @@
 'use client';
-
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
+export const dynamic = 'force-dynamic';
+
 export default function Contact() {
+  const [isMounted, setIsMounted] = useState(false);
+  
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return null; // Return null during server-side rendering
+  }
+
   return (
     <main className="container mx-auto px-4 py-24">
       <section className="flex flex-col items-center justify-center min-h-[calc(100vh-200px)]">

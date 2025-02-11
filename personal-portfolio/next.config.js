@@ -1,24 +1,26 @@
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    reactStrictMode: true,
-    poweredByHeader: false,
-    compress: true,
-    compiler: {
-      removeConsole: process.env.NODE_ENV === 'production',
+  reactStrictMode: true,
+  images: {
+    domains: ['your-domain.com'], // Add your image domains here
+  },
+  // If you want to analyze bundles
+  ...(process.env.ANALYZE === 'true' && {
+    webpack: (config, { dev, isServer }) => {
+      if (!dev && !isServer) {
+        config.plugins.push(
+          new BundleAnalyzerPlugin({
+            analyzerMode: 'server',
+            analyzerPort: 8888,
+            openAnalyzer: true,
+          })
+        );
+      }
+      return config;
     },
-    images: {
-      remotePatterns: [{
-        protocol: 'https',
-        hostname: '**',
-      }],
-      formats: ['image/avif', 'image/webp'],
-      deviceSizes: [640, 750, 828, 1080, 1200],
-      imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    },
-    experimental: {
-      optimizeCss: true,
-      optimizePackageImports: ['@heroicons/react', 'framer-motion', 'react-icons'],
-    },
-  };
-  
-  module.exports = nextConfig;
+  }),
+};
+
+export default nextConfig;

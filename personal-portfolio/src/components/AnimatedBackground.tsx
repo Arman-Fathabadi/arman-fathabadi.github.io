@@ -39,13 +39,14 @@ const AnimatedBackground = () => {
             color2: 0x4fb2ff,
             colorMode: "variance",
             birdSize: 1.50,
-            wingSpan: 40.00,
-            speedLimit: 5.00,
-            separation: 100.00,
-            alignment: 100.00,
-            cohesion: 100.00,
-            quantity: 3.00,
-            backgroundAlpha: 0.0
+            wingSpan: 30.00,
+            speedLimit: 1.50,
+            separation: 250.00,
+            alignment: 10.00,
+            cohesion: 3.00,
+            quantity: 1.00,
+            backgroundAlpha: 0.0,
+            fps: 30
           });
           setVantaEffect(effect);
         }
@@ -75,5 +76,4 @@ const AnimatedBackground = () => {
   );
 };
 
-// Export with dynamic import and disabled SSR
 export default dynamic(() => Promise.resolve(AnimatedBackground), { ssr: false });

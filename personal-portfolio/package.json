@@ -6,10 +6,9 @@
     "scripts": {
       "dev": "next dev",
       "build": "next build",
-      "start": "serve out -s -p 3000",
-      "lint": "next lint",
+      "start": "npx serve@latest out --single --cors --no-compression --listen 3000",
       "clean": "rm -rf .next out",
-      "deploy": "npm run clean && next build && touch out/.nojekyll && gh-pages -d out"
+      "deploy": "npm run clean && cross-env NODE_ENV=production next build && touch out/.nojekyll && gh-pages -d out -t true"
     },
   "dependencies": {
     "@heroicons/react": "^2.2.0",

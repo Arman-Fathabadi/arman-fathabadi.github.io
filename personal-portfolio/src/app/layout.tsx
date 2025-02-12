@@ -1,5 +1,6 @@
 import './globals.css'
 import { Metadata } from 'next'
+import Template from './template'
 
 export const metadata: Metadata = {
   title: 'Arman Fathabadi | Portfolio',
@@ -14,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="flex flex-col min-h-screen" suppressHydrationWarning>
-        {children}
+        <Template>{children}</Template>
       </body>
     </html>
   )

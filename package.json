@@ -3,13 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "clean": "rm -rf .next out",
-    "deploy": "npm run clean && next build && touch out/.nojekyll && gh-pages -d out"
-  },
+    "scripts": {
+      "dev": "next dev",
+      "build": "next build",
+      "start": "next start",
+      "clean": "rm -rf .next out dist",
+      "deploy": "npm run clean && next build && touch dist/.nojekyll && gh-pages -d dist"
+    },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
     "@tailwindcss/forms": "^0.5.10",

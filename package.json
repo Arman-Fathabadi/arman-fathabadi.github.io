@@ -3,13 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "npx serve@latest out --single --cors --no-compression --listen 3000",
-    "clean": "rm -rf .next out",
-    "deploy": "next build && touch out/.nojekyll && gh-pages -d out -t true"
-  },
+    "scripts": {
+      "dev": "next dev",
+      "build": "next build",
+      "start": "next start",
+      "export": "next export",
+      "deploy": "next build && touch out/.nojekyll && gh-pages -d out -t true"
+    },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
     "@tailwindcss/forms": "^0.5.10",

@@ -1,10 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  basePath: process.env.NODE_ENV === 'production' ? '/personal-portfolio' : '',
   output: 'export',
+  basePath: '/personal-portfolio',
   images: {
     unoptimized: true,
   },
+  trailingSlash: true,
 }
 
-export default nextConfig
+module.exports = nextConfig;

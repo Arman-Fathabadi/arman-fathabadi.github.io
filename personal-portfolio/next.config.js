@@ -1,15 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  basePath: process.env.NODE_ENV === 'production' ? '/personal-portfolio' : '',
   output: 'export',
   images: {
     unoptimized: true,
-    remotePatterns: [{
-      protocol: 'https',
-      hostname: '**'
-    }]
   },
-  basePath: process.env.NODE_ENV === 'production' ? '/personal-portfolio' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/personal-portfolio/' : ''
-};
+}
 
-export default nextConfig;
+export default nextConfig

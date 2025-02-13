@@ -45,8 +45,8 @@ const AnimatedBackground = () => {
             alignment: 10.00,
             cohesion: 3.00,
             quantity: 1.00,
-            backgroundAlpha: 0.0,
-            fps: 30
+            backgroundAlpha: 0.0
+            // Removed fps property as it's not supported in VantaBirdsOptions
           });
           setVantaEffect(effect);
         }

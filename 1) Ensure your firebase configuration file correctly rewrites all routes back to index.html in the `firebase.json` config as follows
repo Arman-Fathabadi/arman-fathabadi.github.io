@@ -1,0 +1,7 @@
+{
+   "hosting": {
+     ...
+      // Rewrites for client-side navigation and other similar issues... 
+      
+    }
+}

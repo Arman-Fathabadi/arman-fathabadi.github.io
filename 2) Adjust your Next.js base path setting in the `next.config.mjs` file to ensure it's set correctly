@@ -1,0 +1,3 @@
+{
+   "basePath": process.env.NODE_ENV === 'production' ? '/personal-portfolio': '',  // adjust this as per requirement...
+}

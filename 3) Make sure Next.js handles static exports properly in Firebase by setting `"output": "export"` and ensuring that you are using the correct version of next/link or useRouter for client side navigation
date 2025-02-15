@@ -1,0 +1,9 @@
+{
+   ...  // other settings here...
+    react: {
+      async rewrites() {
+        return [
+          { source: '/about', destination: `/_next/image?url=%2Fstatic%2Fimages%2Fprofile.jpg&w=80`, locale: false }, // adjust this as per requirement... 
+         ]  
+      }   
+}    

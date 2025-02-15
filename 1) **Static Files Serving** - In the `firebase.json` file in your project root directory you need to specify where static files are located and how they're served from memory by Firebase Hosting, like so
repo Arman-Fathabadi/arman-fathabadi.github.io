@@ -1,0 +1,9 @@
+{
+     "hosting": {
+         // ...other configuration...  
+       	"public":"dist",//specify the path for public folder (relative)   
+       }     
+}
+ ```
+This will ensure that your static files are served from memory and can be accessed at http://localhost:3000/.  If you're deploying on Vercel, it should default to '/'.  
+2) **Next.js Configuration** - In the root of public folder create a `next.config.mjs` file with this content :

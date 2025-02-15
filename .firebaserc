@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "arman-website-290a1"
-  }
+    "default": "arman-website-290a1",
+    "personal": "personal-web-1920123"
+  },
+  "targets": {},
+  "etags": {}
 }

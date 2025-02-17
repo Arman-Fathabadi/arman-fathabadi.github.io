@@ -2,7 +2,8 @@
   "projects": {
     "default": "personal-web-1920123",
     "personal": "personal-web-1920123",
-    "production": "personal-web-1920123"
+    "production": "personal-web-1920123",
+    "firebase deploy": "personal-web-1920123"
   },
   "targets": {},
   "etags": {}

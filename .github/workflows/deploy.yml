@@ -12,7 +12,6 @@ permissions:
 
 jobs:
   deploy:
-    environment: production
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -41,12 +40,7 @@ jobs:
       - name: Authenticate with Firebase
         run: |
           echo '${{ secrets.FIREBASE_SERVICE_ACCOUNT }}' > $HOME/firebase-key.json
-          firebase auth:import --account=$HOME/firebase-key.json
+          firebase use --add --token "$(cat $HOME/firebase-key.json | jq -r '.private_key')"
 
       - name: Deploy to Firebase Hosting
-        uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
-          repoToken: ${{ secrets.GITHUB_TOKEN }}
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT }}'
-          channelId: live
-          projectId: personal-web-1920123
+        uses: F
